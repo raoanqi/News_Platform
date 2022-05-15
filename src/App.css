@@ -1,1 +1,16 @@
 @import '~antd/dist/antd.css';
+
+/*修改side menu纵向滚动条的样式*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1890ff;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
