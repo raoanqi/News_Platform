@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 import {Layout, Dropdown, Avatar, Menu} from 'antd'
-import {MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined} from "@ant-design/icons";
+import {MenuFoldOutlined, MenuUnfoldOutlined} from "@ant-design/icons";
 
 const {Header} = Layout
 const {Item} = Menu
@@ -14,8 +14,9 @@ export default function TopHeader() {
     }
     const dropdownMenu = (
         <Menu>
-            <Item key={1}>Super Admin</Item>
-            <Item key={2}>Sign Out</Item>
+            <Item></Item>
+            <Item></Item>
+            <Item></Item>
         </Menu>
     )
     return (
@@ -30,7 +31,7 @@ export default function TopHeader() {
             <div style={{float: 'right'}}>
                 <span>Welcome, Admin</span>
                 <Dropdown overlay={dropdownMenu}>
-                    <Avatar icon={<UserOutlined/>}></Avatar>
+                    <Avatar></Avatar>
                 </Dropdown>
             </div>
         </Header>
