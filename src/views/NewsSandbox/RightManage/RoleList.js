@@ -1,7 +1,9 @@
 import React from "react";
 
-export default function Home() {
+export default function RoleList() {
     return (
-        <div></div>
+        <div>
+            角色管理
+        </div>
     )
 }

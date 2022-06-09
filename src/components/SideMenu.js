@@ -41,9 +41,6 @@ function SideMenu(props) {
         })
     }, [])
 
-    // 记录当前激活的菜单
-    const selectedKeys = [props.location.pathname]
-
     // 记录当前应该展开的一级菜单
     const openKeys = ['/' + props.location.pathname.split('/')[1]]
 
@@ -67,7 +64,13 @@ function SideMenu(props) {
                     return checkPermission(item) && <Item
                         key={item.key}
                         icon={iconListMap[item.key]}
-                        onClick={() => props.history.push(item.key)}>
+                        onClick={() => {
+                            // 这个没有问题
+                            props.history.push(item.key)
+                            console.log(props)
+                            console.log(props.location.pathname)
+                            console.log(typeof (props.location.pathname))
+                        }}>
                         {item.title}
                     </Item>
                 }
@@ -88,7 +91,7 @@ function SideMenu(props) {
                 <Menu
                     theme={'dark'}
                     mode={'inline'}
-                    selectedKeys={selectedKeys}
+                    selectedKeys={[props.location.pathname]}
                     defaultOpenKeys={openKeys}
                     style={{flex: 1, overflow: 'auto'}}>
                     {renderMenu(menuList)}

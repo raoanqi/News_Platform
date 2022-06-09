@@ -28,12 +28,13 @@ export default function NewsSandbox() {
                         padding: 24,
                         minHeight: 280,
                     }}>
+                    {/*这里没有顺利挂载*/}
                     <Switch>
                         <Route path={'/home'} component={Home}></Route>
                         <Route path={'/user-manage/list'} component={UserList}></Route>
                         <Route path={'/right-manage/role/list'} component={RoleList}></Route>
                         <Route path={'/right-manage/right/list'} component={RightList}></Route>
-                        <Redirect from={'/'} to={'/home'} exact={true}></Redirect>
+                        <Redirect from={'/'} to={'/home'} exact></Redirect>
                         <Route path={'*'} component={NoPermission}></Route>
                     </Switch>
                 </Content>
